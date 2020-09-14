@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito&display=swap')
+$simpleFont:'Nunito', sans-serif
+$colorPrincipal: #2F2A35
+$border:1px solid #e1e4e8!important
+$focusElementOutlineColor: #5ca2ff
+$borderFocus:2px solid $focusElementOutlineColor !important
+$colorInterior:#F6F8FA
+$windowsMin: 1280px
+$minForCharts:950px
+
+*
+    margin: 0
+    padding: 0
+
+html,body
+    height: 100%
+    width: 100%
+    
+
+#navbar,#footer
+    height: 50px
+    width: 100%
+    background: $colorPrincipal
+#navbar
+    button
+        width: 40px
+        height: 40px
+        margin-top: 5px
+        margin-left: 10px
+        font-size: 20px
+        color: $colorInterior
+        background: none
+        border: none
+        cursor: pointer
+        @media ( min-width: $windowsMin)
+            display: none
+    #close-burger
+        display: none
+.view-dr
+    position: absolute
+    top: 0
+    bottom: 0
+    left: 0
+    right: 0
+    background: $colorPrincipal
+    z-index: 1
+    opacity: 0.4
+.visible-nb
+    display: grid !important
+    width: 280px !important
+    position: absolute
+    z-index: 2
+.visible-btn
+    display: unset !important
+.no-visible
+    display: none
+#footer
+    position: absolute
+    bottom: 0
+#selector
+    position: absolute
+.c-w
+    background: $colorInterior !important
+
+.container
+    height: 100%
+    display: grid
+    grid-template-columns: 1fr 5fr
+    grid-template-rows: 100%
+    grid-gap: 10px
+    position: relative
+    @media ( max-width: $windowsMin)
+        grid-template-columns: 0fr 1fr
+.box
+    background: transparent
+    //text-align: center
+    color: white
+.two-col
+    display: grid
+    grid-template-columns: 5fr 1fr
+    grid-gap: 10px
+
+#app
+    height: calc( 100% - 100px )
+    position: relative
+
+    #sidebar
+        height: 100%
+        width: 100%
+        display: grid
+        grid-template-rows: 1fr 4fr
+        grid-gap: 10px
+        background: #FFFFFF
+        border-right: $border
+        @media ( max-width: $windowsMin)
+            display: none
+        .box 
+            display: flex
+            flex-wrap: wrap
+            align-items: center
+            justify-content: center
+            &:first-child
+                margin-left: 10px
+                margin-right: 10px
+                border-bottom: $border
+            /*&:last-child
+             margin-top: 20px
+            #usuario
+                height: 60px
+                width: 260px
+                display: flex
+                #prof-pic
+                    width: 60px
+                    height: 60px
+                    border-radius: 60px
+                    border: $border
+                    box-sizing: border-box
+                    background: $colorInterior
+                #prof-name
+                    width: calc( 100% - 60px )
+                    color: $colorPrincipal
+                    font-family: $simpleFont
+                    padding-left: 10px
+                    padding-right: 10px
+                    display: flex
+                    align-items: center
+                    justify-content: center
+            #busqueda
+                background: $colorInterior
+                width: 260px
+                height: 35px
+                display: flex
+                justify-content: center
+                align-items: center
+                border: $border
+                margin-top: -40px
+                border-radius: 5px
+                color: $colorPrincipal
+                box-sizing: border-box
+                &:focus-within
+                    border: $borderFocus
+                input
+                    border: none
+                    background: none
+                    font-size: 14px
+                    padding-right: 5px
+                button
+                    border: none
+                    background: none
+                    cursor: pointer
+                    font-size: 15px
+                    margin-left: 10px
+                    height: calc( fit-content +  10px )
+                    &:hover
+                        color: $focusElementOutlineColor
+            #menu
+                width: 100%
+                height: 100%
+                font-family: $simpleFont
+                .menu-item
+                    font-size: 15px
+                    display: flex
+                    //justify-content: center
+                    align-items: center
+                    height: 50px
+                    color: $colorPrincipal
+                    //border-bottom: $border
+                    cursor: pointer
+                    position: relative
+                    &.active
+                        //background: $colorInterior
+                        border-bottom: $borderFocus
+                        border-top: $borderFocus
+                        color: $focusElementOutlineColor
+                        box-sizing: border-box
+                        &::after
+                            content: ''
+                            position: absolute
+                            left: 0
+                            width: 10px
+                            height: 50px
+                            box-sizing: border-box
+                            background: $focusElementOutlineColor
+                            transition: left 0.5s
+                    &:hover
+                        &:not(.active)  
+                            border-bottom: $border
+                            border-top: $border
+                            box-sizing: border-box                      
+                            &::after
+                                content: ''
+                                position: absolute
+                                right: 0
+                                width: 10px
+                                height: 50px
+                                box-sizing: border-box
+                                background: $colorPrincipal
+                    .mi-icon
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        width: 40px
+                        height: 40px
+                        margin-left: 30px
+                        font-size: 18px
+                        //background: $colorInterior
+                    .mi-name
+                        margin-left: 10px
+
+
+    #description
+        height: 100%
+        display: grid
+        grid-template-rows: 1fr 5fr
+        grid-gap: 10px
+        //padding-right: 10px
+        #tit
+            color: $colorPrincipal
+            display: flex
+            font-family: "Nunito", sans-serif
+            font-size: 55px
+            align-items: center
+            .mi-icon
+                margin-left: 30px
+            div 
+                margin-left: 20px
+        .box
+            &:not(.s):first-child
+                border-bottom: $border
+            .box
+                border: none
+        #main
+            font-family: $simpleFont
+            color: $colorPrincipal
+            width: 100%
+            height: 100%
+            border-radius: 15px
+            margin-right: 10px
+            box-sizing: border-box
+            padding-bottom: 10px
+            .no-border
+                border: none !important
+            #rq
+                //margin: 10px
+                padding-right: 10px
+                margin-right: 10px
+                margin-bottom: 10px
+                //background: white
+                height: 100%
+                border-radius: 5px
+                box-sizing: border-box
+                //border: $border
+                //position: relative
+                display: grid
+                grid-template-columns: 1fr 1fr
+                grid-auto-rows: 1fr 1fr
+                grid-row-gap: 10px
+                grid-column-gap: 10px
+                overflow: auto
+                @media ( max-width: $minForCharts )
+                    grid-template-columns: 1fr
+                    grid-auto-rows: 50% 50% 50% 50%
+                .chart-view
+                    position: relative
+                    background: white
+                    border: $border
+                    *
+                        display: flex
+                        justify-content: center
+                        align-items: center
+
+                    #chartA,#chartB,#chartC,#chartD
+                        position: absolute
+                        top: 0
+                        left: 0
+                        right: 0
+                        bottom: 0
+                        max-height: 95%
+                        padding: 0
+                        margin: auto
+                        display: block
+                        width: unset !important
+/*canvas 
+ padding: 0
+ margin: auto
+ display: block*/
+

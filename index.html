@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+      integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
+      crossorigin="anonymous"
+    />
+    <title>Gloria</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"
+      integrity="sha512-s+xg36jbIujB2S2VKfpGmlC3T5V2TF3lY48DX7u2r9XzGzgPsa6wTpOQA7J9iffvdeBN0q9tKzRxVxw1JviZPg=="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div id="navbar">
+      <button id="burger" class="fas fa-bars"></button>
+      <button id="close-burger" class="fas fa-times"></button>
+    </div>
+    <div id="app">
+      <div id="darker"></div>
+      <div class="container c-w">
+        <div class="box c-w">
+          <div id="sidebar">
+            <div class="box">
+              <div id="usuario">
+                <div id="prof-pic"></div>
+                <div id="prof-name">Hidalgo Avila, David A</div>
+              </div>
+              <div id="busqueda">
+                <input type="text" placeholder="Buscar en el menú..." />
+                <button class="fas fa-search"></button>
+              </div>
+            </div>
+            <div class="box">
+              <div id="menu">
+                <div id="resumen" class="menu-item active">
+                  <div class="mi-icon fas fa-chart-bar"></div>
+                  <div class="mi-name">Resumen</div>
+                </div>
+                <div id="productos" class="menu-item">
+                  <div class="mi-icon fas fa-cheese"></div>
+                  <div class="mi-name">Productos</div>
+                </div>
+                <div id="insumos" class="menu-item">
+                  <div class="mi-icon fas fa-boxes"></div>
+                  <div class="mi-name">Insumos</div>
+                </div>
+                <div id="reportes" class="menu-item">
+                  <div class="mi-icon fas fa-file-invoice-dollar"></div>
+                  <div class="mi-name">Reportes</div>
+                </div>
+                <div id="historial" class="menu-item">
+                  <div class="mi-icon fas fa-history"></div>
+                  <div class="mi-name">Historial</div>
+                </div>
+                <div id="usuarios" class="menu-item">
+                  <div class="mi-icon fas fa-user"></div>
+                  <div class="mi-name">Usuarios</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="box c-w">
+          <div id="description">
+            <div id="tit" class="box c-w"></div>
+            <div id="main" class="box c-w"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="footer"></div>
+
+    <!--Scriptimeeee-->
+    <script type="module" src="js/menu.js"></script>
+  </body>
+</html>

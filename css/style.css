@@ -1,0 +1,331 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#navbar, #footer {
+  height: 50px;
+  width: 100%;
+  background: #2F2A35;
+}
+
+#navbar button {
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-left: 10px;
+  font-size: 20px;
+  color: #F6F8FA;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+@media (min-width: 1280px) {
+  #navbar button {
+    display: none;
+  }
+}
+#navbar #close-burger {
+  display: none;
+}
+
+.view-dr {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #2F2A35;
+  z-index: 1;
+  opacity: 0.4;
+}
+
+.visible-nb {
+  display: grid !important;
+  width: 280px !important;
+  position: absolute;
+  z-index: 2;
+}
+
+.visible-btn {
+  display: unset !important;
+}
+
+.no-visible {
+  display: none;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+}
+
+#selector {
+  position: absolute;
+}
+
+.c-w {
+  background: #F6F8FA !important;
+}
+
+.container {
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 5fr;
+  grid-template-rows: 100%;
+  grid-gap: 10px;
+  position: relative;
+}
+@media (max-width: 1280px) {
+  .container {
+    grid-template-columns: 0fr 1fr;
+  }
+}
+
+.box {
+  background: transparent;
+  color: white;
+}
+
+.two-col {
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-gap: 10px;
+}
+
+#app {
+  height: calc( 100% - 100px );
+  position: relative;
+}
+#app #sidebar {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-rows: 1fr 4fr;
+  grid-gap: 10px;
+  background: #FFFFFF;
+  border-right: 1px solid #e1e4e8 !important;
+}
+@media (max-width: 1280px) {
+  #app #sidebar {
+    display: none;
+  }
+}
+#app #sidebar .box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  /*&:last-child
+  * margin-top: 20px */
+}
+#app #sidebar .box:first-child {
+  margin-left: 10px;
+  margin-right: 10px;
+  border-bottom: 1px solid #e1e4e8 !important;
+}
+#app #sidebar .box #usuario {
+  height: 60px;
+  width: 260px;
+  display: flex;
+}
+#app #sidebar .box #usuario #prof-pic {
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  border: 1px solid #e1e4e8 !important;
+  box-sizing: border-box;
+  background: #F6F8FA;
+}
+#app #sidebar .box #usuario #prof-name {
+  width: calc( 100% - 60px );
+  color: #2F2A35;
+  font-family: "Nunito", sans-serif;
+  padding-left: 10px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#app #sidebar .box #busqueda {
+  background: #F6F8FA;
+  width: 260px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #e1e4e8 !important;
+  margin-top: -40px;
+  border-radius: 5px;
+  color: #2F2A35;
+  box-sizing: border-box;
+}
+#app #sidebar .box #busqueda:focus-within {
+  border: 2px solid #5ca2ff !important;
+}
+#app #sidebar .box #busqueda input {
+  border: none;
+  background: none;
+  font-size: 14px;
+  padding-right: 5px;
+}
+#app #sidebar .box #busqueda button {
+  border: none;
+  background: none;
+  cursor: pointer;
+  font-size: 15px;
+  margin-left: 10px;
+  height: calc( fit-content + 10px );
+}
+#app #sidebar .box #busqueda button:hover {
+  color: #5ca2ff;
+}
+#app #sidebar .box #menu {
+  width: 100%;
+  height: 100%;
+  font-family: "Nunito", sans-serif;
+}
+#app #sidebar .box #menu .menu-item {
+  font-size: 15px;
+  display: flex;
+  align-items: center;
+  height: 50px;
+  color: #2F2A35;
+  cursor: pointer;
+  position: relative;
+}
+#app #sidebar .box #menu .menu-item.active {
+  border-bottom: 2px solid #5ca2ff !important;
+  border-top: 2px solid #5ca2ff !important;
+  color: #5ca2ff;
+  box-sizing: border-box;
+}
+#app #sidebar .box #menu .menu-item.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 10px;
+  height: 50px;
+  box-sizing: border-box;
+  background: #5ca2ff;
+  transition: left 0.5s;
+}
+#app #sidebar .box #menu .menu-item:hover:not(.active) {
+  border-bottom: 1px solid #e1e4e8 !important;
+  border-top: 1px solid #e1e4e8 !important;
+  box-sizing: border-box;
+}
+#app #sidebar .box #menu .menu-item:hover:not(.active)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  width: 10px;
+  height: 50px;
+  box-sizing: border-box;
+  background: #2F2A35;
+}
+#app #sidebar .box #menu .menu-item .mi-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-left: 30px;
+  font-size: 18px;
+}
+#app #sidebar .box #menu .menu-item .mi-name {
+  margin-left: 10px;
+}
+#app #description {
+  height: 100%;
+  display: grid;
+  grid-template-rows: 1fr 5fr;
+  grid-gap: 10px;
+}
+#app #description #tit {
+  color: #2F2A35;
+  display: flex;
+  font-family: "Nunito", sans-serif;
+  font-size: 55px;
+  align-items: center;
+}
+#app #description #tit .mi-icon {
+  margin-left: 30px;
+}
+#app #description #tit div {
+  margin-left: 20px;
+}
+#app #description .box:not(.s):first-child {
+  border-bottom: 1px solid #e1e4e8 !important;
+}
+#app #description .box .box {
+  border: none;
+}
+#app #description #main {
+  font-family: "Nunito", sans-serif;
+  color: #2F2A35;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+  margin-right: 10px;
+  box-sizing: border-box;
+  padding-bottom: 10px;
+}
+#app #description #main .no-border {
+  border: none !important;
+}
+#app #description #main #rq {
+  padding-right: 10px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  height: 100%;
+  border-radius: 5px;
+  box-sizing: border-box;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr 1fr;
+  grid-row-gap: 10px;
+  grid-column-gap: 10px;
+  overflow: auto;
+}
+@media (max-width: 950px) {
+  #app #description #main #rq {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 50% 50% 50% 50%;
+  }
+}
+#app #description #main #rq .chart-view {
+  position: relative;
+  background: white;
+  border: 1px solid #e1e4e8 !important;
+}
+#app #description #main #rq .chart-view * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#app #description #main #rq .chart-view #chartA, #app #description #main #rq .chart-view #chartB, #app #description #main #rq .chart-view #chartC, #app #description #main #rq .chart-view #chartD {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  max-height: 95%;
+  padding: 0;
+  margin: auto;
+  display: block;
+  width: unset !important;
+}
+
+/*canvas 
+ * padding: 0
+ * margin: auto
+ * display: block*/
+
+/*# sourceMappingURL=style.css.map */
