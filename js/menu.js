@@ -122,7 +122,13 @@ nav_burguer_btn.forEach((button) => {
 });
 
 //
-//
+/*
+* COMENTARIO GENERAL
+! AVISO
+? DUDA
+Todo
+@param parametro 
+*/
 //
 //
 //
